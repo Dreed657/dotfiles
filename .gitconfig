@@ -1,6 +1,6 @@
 [user]
 	email = ninjakiviWTF@gmail.com
-	username = Dreed657
+	name = Dreed657
 
 [includeIf "gitdir:~/dev/work/"]
 	path = ~/dev/work/.gitconfig
