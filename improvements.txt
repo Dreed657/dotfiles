@@ -1,0 +1,6 @@
+basic vm config
+
+i3 + i3status + nitrogen
+alacritty + zsh + powerlevel0k + nerdfonts
+vs code + jetbrains toolbox + neovim
+curl + btop + tmux + git + fzf + jq + fd
