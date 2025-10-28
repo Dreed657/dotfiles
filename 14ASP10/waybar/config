@@ -1,6 +1,6 @@
 {
   "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
-  "modules-right": ["temperature", "pulseaudio", "backlight", "network", "battery", "sway/language", "clock"],
+  "modules-right": ["temperature", "pulseaudio", "backlight", "custom/bluetooth", "network", "battery", "sway/language", "clock"],
   "sway/language": {
     "format": "{short}"
   },
@@ -53,7 +53,7 @@
     "format": "{ifname}",
     "format-wifi": "  [{ipaddr}]",
     "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-    "format-disconnected": "Disconnected 󱛅", //An empty format will hide the module.
+    "format-disconnected": "Disconnected 󱛅",
     "tooltip-format": "{ifname} via {gwaddr} 󰛳",
     "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
     "tooltip-format-ethernet": "{ifname} ",
@@ -62,5 +62,10 @@
   },
   "sway/workspaces": {
     "disable-scroll": true
-  }
+  },
+  "custom/bluetooth": {
+    "format": "  {}",
+    "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
+    "interval": 5
+ }
 }
