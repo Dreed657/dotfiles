@@ -40,11 +40,13 @@ default_floating_border pixel 2
 
 #
 # Aesthetic layout
-#
 output * {
   scale 1.5
-  bg ~/.config/wallpaper.png fill
+  # bg ~/.config/wallpaper.png fill
 }
+
+### Set random wallpaper
+exec_always swaybg -m fill -i $(find "$HOME/Pictures/wallpapers" -type f | shuf -n 1)
 
 smart_borders on
 gaps inner 6

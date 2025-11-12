@@ -1,6 +1,26 @@
 {
-  "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
-  "modules-right": ["temperature", "pulseaudio", "backlight", "custom/bluetooth", "network", "battery", "sway/language", "clock"],
+  "modules-left": [
+    "sway/workspaces",
+    "sway/window",
+    "sway/mode"
+  ],
+  "modules-right": [
+    "group/audio",
+    "temperature",
+    "network",
+    "battery",
+    "power-profiles-daemon",
+    "sway/language",
+    "clock"
+  ],
+  "group/audio": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "backlight",
+      "custom/bluetooth"
+    ]
+  },
   "sway/language": {
     "format": "{short}"
   },
@@ -15,8 +35,18 @@
     "format": "{:%b %d(%H:%M) 󰃰}"
   },
   "backlight": {
-    "format": "{percent}% {icon}",
-    "format-icons": ["", "", "", "", "", "", "", "", ""],
+    "format": " {percent}% {icon} ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
     "on-scroll-up": "light -A 1",
     "on-scroll-down": "light -U 1"
   },
@@ -29,10 +59,16 @@
     "format-charging": "{capacity}% 󰢝",
     "format-plugged": "{capacity}% ",
     "format-alt": "{time} {icon}",
-    "format-icons": ["", "", "", "", ""]
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
   },
   "pulseaudio": {
-    "format": "{volume}% {icon} {format_source}",
+    "format": " {volume}% {icon} {format_source} ",
     "format-bluetooth": "{volume}% {icon} {format_source}",
     "format-bluetooth-muted": "󰝟 {icon} {format_source}",
     "format-muted": "󰝟 {format_source}",
@@ -45,7 +81,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol"
   },
@@ -64,8 +104,19 @@
     "disable-scroll": true
   },
   "custom/bluetooth": {
-    "format": "  {}",
+    "format": " {} ",
     "exec": "~/.config/waybar/scripts/bluetooth_status.sh",
     "interval": 5
- }
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "",
+      "balanced": "",
+      "power-saver": ""
+    }
+  }
 }
