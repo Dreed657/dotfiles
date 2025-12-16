@@ -30,6 +30,9 @@ set $term kitty
 default_border pixel 2
 default_floating_border pixel 2
 
+# nightlight
+exec_always gammastep -m wayland
+
 #
 # Focus layout
 #
@@ -206,6 +209,10 @@ bindsym Shift+Print exec grim -g "$(slurp)" ~/Pictures/screenshot-$(date +%F_%T)
 # Screenshot area to clipboard
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
+# Copilot key emits F23 + Meta — bind both just in case
+# bindsym --release F23 exec ~/.config/sway/scripts/toggle-power-profile.sh
+# bindsym --release Mod4+F23 exec ~/.config/sway/scripts/toggle-power-profile.sh
+
 ### Theming
 #
 # Colors:
@@ -232,3 +239,4 @@ client.urgent           $red $red $accent $red $red
 bar swaybar_command waybar
 
 include /etc/sway/config.d/*
+
