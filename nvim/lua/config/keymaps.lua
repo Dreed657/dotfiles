@@ -1,0 +1,2 @@
+-- Add personal keymaps here.
+-- Press <leader> in Neovim to discover LazyVim mappings via which-key.
