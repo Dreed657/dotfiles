@@ -1,0 +1,2 @@
+-- Add personal LazyVim options here.
+-- LazyVim defaults are kept unless explicitly overridden.
